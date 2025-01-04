@@ -1,59 +1,57 @@
-# mindset_big_data
 # House Price Prediction
 
-This project implements a house price prediction system using three regression models: **Linear Regression**, **Random Forest Regression**, and **Support Vector Regression (SVR)**. The analysis and modeling are structured into the following sections:
+### **Objective**
+Develop a system to predict house prices using three regression models: Linear Regression, Random Forest Regression, and Support Vector Regression (SVR).
 
 ---
 
-## 1. Data Loading and Exploration
-- **Libraries Used:** `pandas`, `matplotlib`, `seaborn`, `scikit-learn`
-- **Dataset:** `house.csv`, loaded into a pandas DataFrame (`df`).
-- **Exploratory Data Analysis (EDA):**
-  - Basic dataset information using `df.head()`, `df.tail()`, `df.shape`, `df.info()`, and `df.describe()`.
-  - **Correlation Analysis:** Heatmap visualization using `seaborn.heatmap`.
-  - **Outlier Detection:** Box plots for each feature.
-  - **Outlier Removal:** IQR method applied to the `price` column.
+### **Methodology**
 
----
+#### Data Loading and Exploration
+- **Data Exploration:**
+  - Loaded the `house.csv` dataset into a pandas DataFrame (`df`).
+  - Performed basic data analysis using `df.head()`, `df.tail()`, `df.shape`, `df.info()`, and `df.describe()`.
+- **Visualization:**
+  - Plotted correlations using a heatmap (`seaborn.heatmap`).
+  - Detected outliers with box plots for each feature.
+- **Outlier Removal:** 
+  - Applied the IQR method to clean the `price` column.
 
-## 2. Linear Regression Model
+#### Linear Regression Model
 - **Data Preparation:**
   - Separated features (`X`) and target variable (`y`).
   - Scaled features using `StandardScaler`.
-  - Split dataset into training and testing sets using `train_test_split`.
-- **Model Training:** Linear Regression model trained on the processed data.
+  - Split the dataset into training and testing sets with `train_test_split`.
+- **Model Training:** Trained a Linear Regression model.
 - **Model Evaluation:**
-  - **Metrics:** Mean Squared Error (MSE) and R-squared (R²).
-  - **Visualizations:**
-    - Scatter plot of predictions vs. actual values.
-    - Residual analysis and adjusted R-squared calculation.
+  - Calculated Mean Squared Error (MSE) and R-squared (R²).
+  - Visualized predictions vs. actual values using a scatter plot.
+  - Analyzed residuals and calculated adjusted R-squared.
+
+#### Random Forest Regression Model
+- **Model Training:** Built a Random Forest Regression model.  
+- **Model Evaluation:**  
+  - Computed R-squared error.
+  - Plotted actual vs. predicted prices with a line plot.
+
+#### Support Vector Regression (SVR) Model
+- **Data Preparation:** Similar to the Linear Regression process.
+- **Model Training:** Trained an SVR model with a linear kernel.
+- **Model Evaluation:**  
+  - Plotted actual vs. predicted values.  
+  - Analyzed residuals.  
+  - Displayed feature coefficients.
 
 ---
 
-## 3. Random Forest Regression Model
-- **Model Training:** Random Forest Regression model trained on the dataset.
-- **Model Evaluation:**
-  - **Metrics:** R-squared error.
-  - **Visualizations:** Line plot comparing actual and predicted prices.
+### **Findings**
+- Identified key preprocessing steps like outlier removal and feature scaling as critical for model performance.  
+- Demonstrated the strengths and weaknesses of each regression model:
+  - **Linear Regression:** Simple and interpretable but may lack flexibility.  
+  - **Random Forest:** Non-linear and robust, providing strong performance.  
+  - **SVR:** Effective for small datasets with linear relationships but computationally intensive.
 
 ---
 
-## 4. Support Vector Regression (SVR) Model
-- **Data Preparation:** Similar process to Linear Regression.
-- **Model Training:** SVR model trained using a linear kernel.
-- **Model Evaluation:**
-  - **Visualizations:**
-    - Scatter plot of actual vs. predicted values.
-    - Residual plot.
-    - Display of feature coefficients.
-
----
-
-## Key Insights
-- Compared the performance of three regression models for house price prediction.
-- Highlighted the importance of data preprocessing, including outlier removal and feature scaling.
-- Provided clear visualizations for model evaluation and interpretability.
-
----
-
-Feel free to explore the code and analysis for each model in the repository. Contributions and suggestions are welcome!
+### **Tools Used**
+- **Python Libraries:** `Pandas`, `Matplotlib`, `Seaborn`, `Scikit-learn`.
